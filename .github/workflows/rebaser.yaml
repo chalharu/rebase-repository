@@ -1,0 +1,13 @@
+name: Rebaser
+on:
+  workflow_dispatch:
+jobs:
+  rebaser:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get token
+      id: get_token
+      uses: tibdex/github-app-token@v1.8.0
+      with:
+        private_key: ${{ secrets.PRIVATE_KEY }}
+        app_id: ${{ secrets.APP_ID }}
